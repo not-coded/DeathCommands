@@ -10,7 +10,9 @@
 
 This mod allows you to run a command whenever you respawn/die.
 
-![alt text](http://url/to/img.png)
+![client showcase](https://github.com/not-coded/DeathCommands/raw/main/showcase/client.gif)
+
+![server showcase](https://github.com/not-coded/DeathCommands/raw/main/showcase/server.gif)
 
 ## Download
 [Modrinth](https://modrinth.com/mod/deathcommands) - [CurseForge](https://www.curseforge.com/minecraft/mc-mods/deathcommands/) - [GitHub](https://github.com/not-coded/DeathCommands/releases/)
