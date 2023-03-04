@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DeathCommands.iml" filepath="$PROJECT_DIR$/.idea/modules/DeathCommands.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DeathCommands.main.iml" filepath="$PROJECT_DIR$/.idea/modules/DeathCommands.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DeathCommands.test.iml" filepath="$PROJECT_DIR$/.idea/modules/DeathCommands.test.iml" />
     </modules>
   </component>
 </project>
