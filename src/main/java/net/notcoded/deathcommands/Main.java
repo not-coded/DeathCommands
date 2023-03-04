@@ -29,7 +29,7 @@ public class Main implements ModInitializer {
 
 		try {
 			loadClient();
-		} catch(Exception ignored){
+		} catch(NoClassDefFoundError | Exception ignored){
 			loadServer();
 		}
 	}
@@ -52,8 +52,6 @@ public class Main implements ModInitializer {
 	}
 
 	private void loadServer() {
-		ServerLifecycleEvents.SERVER_STARTED.register((minecraftServer) -> {
-			server = minecraftServer;
-		});
+		ServerLifecycleEvents.SERVER_STARTED.register((minecraftServer) -> server = minecraftServer);
 	}
 }
