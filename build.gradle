@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.5-SNAPSHOT'
+	id 'fabric-loom' version '0.7-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -12,10 +12,9 @@ group = project.maven_group
 
 // Repo for CT intermediary mappings
 repositories {
-	maven {
-		name "CombatReforged"
-		url "https://maven.combatreforged.com"
-	}
+	maven { url "https://maven.rizecookey.net" }
+	maven { url "https://maven.shedaniel.me/" }
+	maven { url "https://maven.terraformersmc.com/releases/" }
 }
 
 dependencies {
@@ -23,6 +22,14 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	modApi('me.shedaniel.cloth:cloth-config-fabric:4.10.11') { exclude(group: "net.fabricmc.fabric-api") }
+	modApi("com.terraformersmc:modmenu:1.16.23")
+
+	include(modApi('net.fabricmc.fabric-api:fabric-key-binding-api-v1:1.0.2+ca58154a7d'))
+	include(modApi('net.fabricmc.fabric-api:fabric-api-base:0.2.0+daa38b3d7d'))
+	include(modApi('net.fabricmc.fabric-api:fabric-lifecycle-events-v1:1.2.1+ca58154a7d'))
+	include(modApi('net.fabricmc.fabric-api:fabric-resource-loader-v0:0.4.2+ca58154a7d'))
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
@@ -32,7 +39,7 @@ dependencies {
 minecraft {
 	customManifest = "https://gist.githubusercontent.com/rizecookey/4c6142baaccc3875f9b227fe22f2ace5/raw/c8ed74b19f7a5315813c9d4b199798b692a8f359/1.16_combat-6.json"
 	intermediaryUrl = { mcVersion ->
-		return "https://maven.combatreforged.com/net/fabricmc/intermediary/${mcVersion}/intermediary-${mcVersion}-v2.jar";
+		return "https://maven.rizecookey.net/net/fabricmc/intermediary/${mcVersion}/intermediary-${mcVersion}-v2.jar";
 	}
 }
 

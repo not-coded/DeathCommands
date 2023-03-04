@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.notcoded.deathcommands.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "client.PlayerEventsMixin",
+    "client.OptionScreenMixin"
+  ],
+  "server": [
+    "server.PlayerEventsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

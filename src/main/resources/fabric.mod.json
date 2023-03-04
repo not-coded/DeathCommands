@@ -1,36 +1,42 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "deathcommands",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Death Commands",
+  "description": "Runs a command whenever you respawn/die.",
   "authors": [
-    "Me!"
+    "NotCoded"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://notcoded.cf/",
+    "sources": "https://github.com/not-coded/DeathCommands",
+    "issues": "https://github.com/not-coded/DeathCommands/issues"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "GPL-3.0",
+  "icon": "assets/deathcommands/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.notcoded.deathcommands.Main"
+    ],
+    "modmenu": [
+      "net.notcoded.deathcommands.config.ModMenuIntegration"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "deathcommands.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.7.4",
-    "minecraft": "1.16.x"
-  },
-  "suggests": {
-    "flamingo": "*"
+    "minecraft": ">=1.16",
+    "fabric-api-base": ">=0.2.0",
+    "fabric-key-binding-api-v1": ">=1.0.2",
+    "fabric-resource-loader-v0": ">=0.4.0",
+    "fabric-lifecycle-events-v1": ">=1.2.1",
+    "cloth-config2": ">=4.9.0"
   }
 }
