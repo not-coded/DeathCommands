@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="DeathCommands:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="net.notcoded.deathcommands.Main" external.system.module.type="sourceSet" external.system.module.version="1.0.1+1.16.x" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="DeathCommands:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="net.notcoded.deathcommands.Main" external.system.module.type="sourceSet" external.system.module.version="1.0.11+1.16.x" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="minecraft" name="Minecraft">
       <configuration>
@@ -88,10 +88,10 @@
     <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.me.shedaniel.cloth:cloth-config-fabric:4.10.11" level="project" />
     <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.com.terraformersmc:modmenu:1.16.23" level="project" />
     <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.net.fabricmc.fabric-api:fabric-key-binding-api-v1:1.0.2+ca58154a7d" level="project" />
-    <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.net.fabricmc.fabric-api:fabric-lifecycle-events-v1:1.2.1+ca58154a7d" level="project" />
-    <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.net.fabricmc.fabric-api:fabric-screen-api-v1:1.0.0+c045166c7d" level="project" />
-    <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.net.fabricmc.fabric-api:fabric-api-base:0.3.0+f74f7c7d7d" level="project" />
     <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.net.fabricmc.fabric-api:fabric-resource-loader-v0:0.4.2+ca58154a7d" level="project" />
+    <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.net.fabricmc.fabric-api:fabric-screen-api-v1:1.0.0+c045166c7d" level="project" />
+    <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.net.fabricmc.fabric-api:fabric-lifecycle-events-v1:1.2.1+ca58154a7d" level="project" />
+    <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.net.fabricmc.fabric-api:fabric-api-base:0.3.0+f74f7c7d7d" level="project" />
     <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.net.fabricmc:fabric-loader:0.14.17" level="project" />
     <orderEntry type="library" name="Gradle: net_fabricmc_yarn_1_16_5_1_16_5_build_10_v2.me.shedaniel.cloth:basic-math:0.5.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: net.fabricmc:dev-launch-injector:0.2.1+build.8" level="project" />

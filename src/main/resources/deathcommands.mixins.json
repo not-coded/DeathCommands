@@ -5,10 +5,12 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "client.PlayerEventsMixin",
+    "client.MinecraftClientMixin",
     "client.OptionScreenMixin"
   ],
   "server": [
-    "server.PlayerEventsMixin"
+    "server.PlayerEventsMixin",
+    "server.MinecraftServerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

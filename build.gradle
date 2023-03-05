@@ -28,8 +28,6 @@ dependencies {
 	modApi("com.terraformersmc:modmenu:1.16.23")
 
 	include(modApi('net.fabricmc.fabric-api:fabric-key-binding-api-v1:1.0.2+ca58154a7d'))
-	include(modApi('net.fabricmc.fabric-api:fabric-api-base:0.2.0+daa38b3d7d'))
-	include(modApi('net.fabricmc.fabric-api:fabric-lifecycle-events-v1:1.2.1+ca58154a7d'))
 	include(modApi('net.fabricmc.fabric-api:fabric-resource-loader-v0:0.4.2+ca58154a7d'))
 }
 
