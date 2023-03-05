@@ -26,9 +26,7 @@ public abstract class OptionScreenMixin extends Screen {
     @Inject(at = @At("RETURN"), method = "init")
     private void addCustomButton(CallbackInfo ci) {
         if(Main.clientModConfig.optionsMenu){
-            this.addButton(new ButtonWidget(this.width / 2 + 5, this.height / 6 - 12 + 30, 150, 20, new TranslatableText("deathcommands.options"), (buttonWidget) -> {
-                Main.client.openScreen(AutoConfig.getConfigScreen(ClientModConfig.class, this).get());
-            }));
+            this.addDrawableChild(new ButtonWidget(this.width / 2 + 5, this.height / 6 - 12 + 30, 150, 20, new TranslatableText("deathcommands.options"), (buttonWidget) -> Main.client.setScreen(AutoConfig.getConfigScreen(ClientModConfig.class, this).get())));
         }
     }
 }
