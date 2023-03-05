@@ -6,8 +6,8 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.Tooltip;
 
 import java.util.ArrayList;
 
-@Config(name = "deathcommands")
-public class ModConfig implements ConfigData {
+@Config(name = "deathcommands-client")
+public class ClientModConfig implements ConfigData {
 
     @Tooltip
     public boolean isEnabled = true;

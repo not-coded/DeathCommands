@@ -15,10 +15,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class PlayerEventsMixin {
     @Inject(method = "onDeath", at = @At("HEAD"))
     private void die(DamageSource source, CallbackInfo ci) {
-        if(Main.config.isEnabled){
-            for(String s : Main.config.messages){
+        if(Main.serverModConfig.isEnabled){
+            for(String s : Main.serverModConfig.server_messages){
                 if (s != null && s.trim().length() != 0 && Main.server != null) {
-                    for(int i = 0; i < Main.config.amountTimes; i++){
+                    for(int i = 0; i < Main.serverModConfig.server_amountTimes; i++){
+                        Main.server.getCommandManager().execute(Main.server.getCommandSource(), s);
+                    }
+                }
+            }
+            for(String s : Main.serverModConfig.player_messages){
+                if (s != null && s.trim().length() != 0 && Main.server != null) {
+                    for(int i = 0; i < Main.serverModConfig.player_amountTimes; i++){
                         ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
                         Main.server.getCommandManager().execute(player.getCommandSource(), s);
                     }

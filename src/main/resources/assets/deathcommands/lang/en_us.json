@@ -4,17 +4,17 @@
 
   "deathcommands.keybinds.menu": "Open Config",
 
-  "text.autoconfig.deathcommands.title": "DeathCommands Options",
+  "text.autoconfig.deathcommands-client.title": "DeathCommands Options",
 
-  "text.autoconfig.deathcommands.option.isEnabled": "Enabled",
-  "text.autoconfig.deathcommands.option.isEnabled.@Tooltip": "This decides if the mod is enabled.",
+  "text.autoconfig.deathcommands-client.option.isEnabled": "Enabled",
+  "text.autoconfig.deathcommands-client.option.isEnabled.@Tooltip": "This decides if the mod is enabled.",
 
-  "text.autoconfig.deathcommands.option.messages": "Messages",
-  "text.autoconfig.deathcommands.option.messages.@Tooltip": "These messages run, whenever you die.",
+  "text.autoconfig.deathcommands-client.option.messages": "Messages",
+  "text.autoconfig.deathcommands-client.option.messages.@Tooltip": "These messages run, whenever you die.",
 
-  "text.autoconfig.deathcommands.option.amountTimes": "Times should run",
-  "text.autoconfig.deathcommands.option.amountTimes.@Tooltip": "Specifies the amount of times the messages should be ran.",
+  "text.autoconfig.deathcommands-client.option.amountTimes": "Times should run",
+  "text.autoconfig.deathcommands-client.option.amountTimes.@Tooltip": "Specifies the amount of times the messages should be ran.",
 
-  "text.autoconfig.deathcommands.option.optionsMenu": "Options Menu",
-  "text.autoconfig.deathcommands.option.optionsMenu.@Tooltip": "This decides if the button in the options menu is enabled."
+  "text.autoconfig.deathcommands-client.option.optionsMenu": "Options Menu",
+  "text.autoconfig.deathcommands-client.option.optionsMenu.@Tooltip": "This decides if the button in the options menu is enabled."
 }

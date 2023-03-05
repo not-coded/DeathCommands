@@ -10,7 +10,8 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.server.MinecraftServer;
-import net.notcoded.deathcommands.config.ModConfig;
+import net.notcoded.deathcommands.config.ClientModConfig;
+import net.notcoded.deathcommands.config.ServerModConfig;
 import org.lwjgl.glfw.GLFW;
 
 public class Main implements ModInitializer {
@@ -21,11 +22,11 @@ public class Main implements ModInitializer {
 
 	public static KeyBinding keyBinding;
 
-	public static ModConfig config;
+	public static ClientModConfig clientModConfig;
+
+	public static ServerModConfig serverModConfig;
 	@Override
 	public void onInitialize() {
-		AutoConfig.register(ModConfig.class, GsonConfigSerializer::new);
-		config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
 		try {
 			loadClient();
@@ -37,6 +38,9 @@ public class Main implements ModInitializer {
 	private void loadClient(){
 		Main.client = MinecraftClient.getInstance();
 
+		AutoConfig.register(ClientModConfig.class, GsonConfigSerializer::new);
+		clientModConfig = AutoConfig.getConfigHolder(ClientModConfig.class).getConfig();
+
 		keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 				"deathcommands.keybinds.menu", // The translation key of the keybinding's name
 				InputUtil.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
@@ -46,12 +50,14 @@ public class Main implements ModInitializer {
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (keyBinding.wasPressed()) {
-				client.openScreen(AutoConfig.getConfigScreen(ModConfig.class, null).get());
+				client.openScreen(AutoConfig.getConfigScreen(ClientModConfig.class, null).get());
 			}
 		});
 	}
 
 	private void loadServer() {
+		AutoConfig.register(ServerModConfig.class, GsonConfigSerializer::new);
+		serverModConfig = AutoConfig.getConfigHolder(ServerModConfig.class).getConfig();
 		ServerLifecycleEvents.SERVER_STARTED.register((minecraftServer) -> server = minecraftServer);
 	}
 }

@@ -10,9 +10,10 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
-// Repo for CT intermediary mappings
+minecraft {
+}
+
 repositories {
-	maven { url "https://maven.rizecookey.net" }
 	maven { url "https://maven.shedaniel.me/" }
 	maven { url "https://maven.terraformersmc.com/releases/" }
 }
@@ -30,17 +31,6 @@ dependencies {
 	include(modApi('net.fabricmc.fabric-api:fabric-api-base:0.2.0+daa38b3d7d'))
 	include(modApi('net.fabricmc.fabric-api:fabric-lifecycle-events-v1:1.2.1+ca58154a7d'))
 	include(modApi('net.fabricmc.fabric-api:fabric-resource-loader-v0:0.4.2+ca58154a7d'))
-
-	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-	// You may need to force-disable transitiveness on them.
-}
-
-// Custom Manifest and Intermediary mappings declaration
-minecraft {
-	customManifest = "https://gist.githubusercontent.com/rizecookey/4c6142baaccc3875f9b227fe22f2ace5/raw/c8ed74b19f7a5315813c9d4b199798b692a8f359/1.16_combat-6.json"
-	intermediaryUrl = { mcVersion ->
-		return "https://maven.rizecookey.net/net/fabricmc/intermediary/${mcVersion}/intermediary-${mcVersion}-v2.jar";
-	}
 }
 
 processResources {
@@ -80,18 +70,15 @@ publishing {
 	publications {
 		mavenJava(MavenPublication) {
 			// add all the jars that should be included when publishing to maven
-			artifact(remapJar) {
+			artifact(jar) {
+				builtBy remapJar
+			}
+			artifact("${project.buildDir.absolutePath}/libs/${archivesBaseName}-${project.version}.jar"){
 				builtBy remapJar
 			}
 			artifact(sourcesJar) {
 				builtBy remapSourcesJar
 			}
 		}
-	}
-
-	// select the repositories you want to publish to
-	repositories {
-		// uncomment to publish to the local maven
-		// mavenLocal()
 	}
 }

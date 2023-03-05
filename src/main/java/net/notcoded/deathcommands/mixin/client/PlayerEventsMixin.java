@@ -14,10 +14,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class PlayerEventsMixin {
     @Inject(method = "requestRespawn", at = @At("HEAD"))
     private void die(CallbackInfo ci) {
-        if(Main.config.isEnabled){
-            for(String s : Main.config.messages){
+        if(Main.clientModConfig.isEnabled){
+            for(String s : Main.clientModConfig.messages){
                 if (s != null && s.trim().length() != 0 && Main.client.player != null) {
-                    for(int i = 0; i < Main.config.amountTimes; i++){
+                    for(int i = 0; i < Main.clientModConfig.amountTimes; i++){
                         Main.client.player.sendChatMessage(s);
                     }
                 }
