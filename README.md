@@ -10,14 +10,16 @@
 
 This mod allows you to run a command whenever you respawn/die.
 
-![client showcase](https://github.com/not-coded/DeathCommands/raw/main/showcase/client.gif)
-
-![server showcase](https://github.com/not-coded/DeathCommands/raw/main/showcase/server.gif)
-
 ## Download
 [Modrinth](https://modrinth.com/mod/deathcommands) - [CurseForge](https://www.curseforge.com/minecraft/mc-mods/deathcommands/) - [GitHub](https://github.com/not-coded/DeathCommands/releases/)
 
 **Disclaimer**: This **REQUIRES** [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config) (4.9+).
+
+![client showcase](https://github.com/not-coded/DeathCommands/raw/main/showcase/client.gif)
+
+![server showcase](https://github.com/not-coded/DeathCommands/raw/main/showcase/server.gif)
+
+
 
 ## Features
 - You can specify how many times the messages are sent.
