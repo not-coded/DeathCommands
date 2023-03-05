@@ -32,9 +32,9 @@
 
   "depends": {
     "fabricloader": ">=0.11.3",
-    "minecraft": "1.18.x",
-    "fabric-key-binding-api-v1": ">=1.0.12",
-    "fabric-resource-loader-v0": ">=0.4.18",
+    "minecraft": "1.19",
+    "fabric-key-binding-api-v1": ">=1.0.25",
+    "fabric-resource-loader-v0": ">=0.8.3",
     "cloth-config2": ">=4.9.0",
     "java": ">=16"
   }

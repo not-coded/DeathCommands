@@ -19,7 +19,11 @@ public class PlayerEventsMixin {
             for(String s : Main.serverModConfig.server_messages){
                 if (s != null && s.trim().length() != 0 && Main.server != null) {
                     for(int i = 0; i < Main.serverModConfig.server_amountTimes; i++){
-                        Main.server.getCommandManager().execute(Main.server.getCommandSource(), s);
+                        String replacedS = s;
+                        if(s.startsWith("/")){
+                            replacedS = s.replaceFirst("/", "");
+                        }
+                        Main.server.getCommandManager().execute(Main.server.getCommandSource(), replacedS);
                     }
                 }
             }
@@ -27,7 +31,11 @@ public class PlayerEventsMixin {
                 if (s != null && s.trim().length() != 0 && Main.server != null) {
                     for(int i = 0; i < Main.serverModConfig.player_amountTimes; i++){
                         ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
-                        Main.server.getCommandManager().execute(player.getCommandSource(), s);
+                        String replacedS = s;
+                        if(s.startsWith("/")){
+                            replacedS = s.replaceFirst("/", "");
+                        }
+                        Main.server.getCommandManager().execute(player.getCommandSource(), replacedS);
                     }
                 }
             }

@@ -7,7 +7,6 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.OptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.notcoded.deathcommands.Main;
 import net.notcoded.deathcommands.config.ClientModConfig;
 import org.spongepowered.asm.mixin.Mixin;
@@ -26,7 +25,7 @@ public abstract class OptionScreenMixin extends Screen {
     @Inject(at = @At("RETURN"), method = "init")
     private void addCustomButton(CallbackInfo ci) {
         if(Main.clientModConfig.optionsMenu){
-            this.addDrawableChild(new ButtonWidget(this.width / 2 + 5, this.height / 6 - 12 + 30, 150, 20, new TranslatableText("deathcommands.options"), (buttonWidget) -> Main.client.setScreen(AutoConfig.getConfigScreen(ClientModConfig.class, this).get())));
+            this.addDrawableChild(new ButtonWidget(this.width / 2 + 5, this.height / 6 - 12 + 30, 150, 20, Text.translatable("deathcommands.options"), (buttonWidget) -> Main.client.setScreen(AutoConfig.getConfigScreen(ClientModConfig.class, this).get())));
         }
     }
 }
