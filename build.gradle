@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.10-SNAPSHOT'
+	id 'fabric-loom' version '0.12-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -28,10 +28,10 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modApi('me.shedaniel.cloth:cloth-config-fabric:5.3.63') { exclude(group: "net.fabricmc.fabric-api") }
-	modApi("com.terraformersmc:modmenu:2.0.17")
+	modApi("com.terraformersmc:modmenu:3.2.5")
 
-	include(modApi('net.fabricmc.fabric-api:fabric-key-binding-api-v1:1.0.4+a02b44633d'))
-	include(modApi('net.fabricmc.fabric-api:fabric-resource-loader-v0:0.4.7+b7ab61213d'))
+	include(modApi('net.fabricmc.fabric-api:fabric-key-binding-api-v1:1.0.12+54e5b2ec60'))
+	include(modApi('net.fabricmc.fabric-api:fabric-resource-loader-v0:0.4.18+2de5574560'))
 }
 
 processResources {
@@ -43,7 +43,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	// Minecraft 1.17 (21w19a) upwards uses Java 16.
+	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
 	it.options.release = 16
 }
 
