@@ -3,10 +3,10 @@ package net.notcoded.deathcommands.mixin.client;
 import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.option.OptionsScreen;
-import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.screens.OptionsScreen;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import net.notcoded.deathcommands.Main;
 import net.notcoded.deathcommands.config.ClientModConfig;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,14 +18,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Environment(EnvType.CLIENT)
 public abstract class OptionScreenMixin extends Screen {
 
-    protected OptionScreenMixin(Text title) {
-        super(title);
+
+    protected OptionScreenMixin(Component component) {
+        super(component);
     }
 
     @Inject(at = @At("RETURN"), method = "init")
-    private void addCustomButton(CallbackInfo ci) {
+    private void addButton(CallbackInfo ci) {
         if(Main.clientModConfig.optionsMenu){
-            this.addDrawableChild(new ButtonWidget(this.width / 2 + 5, this.height / 6 - 12 + 30, 150, 20, Text.translatable("deathcommands.options"), (buttonWidget) -> Main.client.setScreen(AutoConfig.getConfigScreen(ClientModConfig.class, this).get())));
+            this.addRenderableWidget(new Button(this.width / 2 + 5, this.height / 6 - 12 + 30, 150, 20, Component.translatable("deathcommands.options"), (buttonWidget) -> Main.client.setScreen(AutoConfig.getConfigScreen(ClientModConfig.class, this).get())));
         }
     }
 }

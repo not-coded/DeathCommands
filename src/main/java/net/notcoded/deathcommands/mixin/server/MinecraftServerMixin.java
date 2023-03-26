@@ -15,7 +15,7 @@ public class MinecraftServerMixin {
 
     boolean firstTickPassed = false;
 
-    @Inject(at = @At("HEAD"), method = "tick")
+    @Inject(at = @At("HEAD"), method = "tickChildren")
     private void tickHead(CallbackInfo ci) {
         if (!firstTickPassed) {
             firstTickPassed = true;

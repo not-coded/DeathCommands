@@ -1,12 +1,12 @@
 package net.notcoded.deathcommands;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.util.InputUtil;
+import net.minecraft.client.KeyMapping;
+import net.minecraft.client.Minecraft;
 import net.minecraft.server.MinecraftServer;
 import net.notcoded.deathcommands.config.ClientModConfig;
 import net.notcoded.deathcommands.config.ServerModConfig;
@@ -16,9 +16,9 @@ public class Main implements ModInitializer {
 
 	public static MinecraftServer server;
 
-	public static MinecraftClient client;
+	public static Minecraft client;
 
-	public static KeyBinding keyBinding;
+	public static KeyMapping keyBinding;
 
 	public static ClientModConfig clientModConfig;
 
@@ -34,14 +34,14 @@ public class Main implements ModInitializer {
 	}
 
 	private void loadClient(){
-		Main.client = MinecraftClient.getInstance();
+		Main.client = Minecraft.getInstance();
 
 		AutoConfig.register(ClientModConfig.class, GsonConfigSerializer::new);
 		clientModConfig = AutoConfig.getConfigHolder(ClientModConfig.class).getConfig();
 
-		keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+		keyBinding = KeyBindingHelper.registerKeyBinding(new KeyMapping(
 				"deathcommands.keybinds.menu", // The translation key of the keybinding's name
-				InputUtil.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
+				InputConstants.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
 				GLFW.GLFW_KEY_Y, // The keycode of the key
 				"deathcommands.title" // The translation key of the keybinding's category.
 		));
